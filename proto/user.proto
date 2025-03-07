@@ -4,7 +4,10 @@ package user;
 
 service UserService {
     rpc CreateUser(CreateUserRequest) returns (CreateUserResponse);
+    rpc GetUser(GetUserRequest) returns (GetUserResponse);
     rpc ListUsers(ListUsersRequest) returns (ListUsersResponse);
+    rpc UpdateUser(UpdateUserRequest) returns (UpdateUserResponse);
+    rpc DeleteUser(DeleteUserRequest) returns (DeleteUserResponse);
 }
 
 message User {
@@ -22,8 +25,32 @@ message CreateUserResponse {
     User user = 1;
 }
 
+message GetUserRequest {
+    string id = 1;
+}
+
+message GetUserResponse {
+    User user = 1;
+}
+
 message ListUsersRequest {}
 
 message ListUsersResponse {
     repeated User users = 1;
 }
+
+message UpdateUserRequest {
+    string id = 1;
+    string name = 2;
+    string email = 3;
+}
+
+message UpdateUserResponse {
+    User user = 1;
+}
+
+message DeleteUserRequest {
+    string id = 1;
+}
+
+message DeleteUserResponse {}
