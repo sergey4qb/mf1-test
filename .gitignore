@@ -19,3 +19,9 @@ vendor/
 .idea/
 .vscode/
 *.iml
+
+# env file
+.env
+
+#pb
+/proto/pb/
